@@ -2,6 +2,17 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
+import { 
+  ArrowLeft, 
+  Check, 
+  ExternalLink, 
+  BadgeCheck, 
+  Badge, 
+  Percent, 
+  Receipt, 
+  Clock,
+  ArrowRight
+} from 'lucide-react';
 import { lenderSelectionSchema } from '../lib/validations';
 
 export function EligibleLenders() {
@@ -28,7 +39,7 @@ export function EligibleLenders() {
     hdfc: {
       id: 'hdfc',
       name: 'HDFC Bank',
-      status: 'Pre-Approved',
+      status: 'Eligible',
       statusColor: 'emerald',
       mdr: '1.2%',
       interestRate: '12% p.a.',
@@ -98,7 +109,7 @@ export function EligibleLenders() {
             onClick={() => navigate('/document-upload')}
             className="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-full transition-colors"
           >
-            <span className="material-symbols-outlined block">arrow_back</span>
+            <ArrowLeft className="w-5 h-5" />
           </button>
           <h1 className="flex-1 text-center text-lg font-bold mr-10">Eligible Lenders</h1>
         </div>
@@ -110,7 +121,7 @@ export function EligibleLenders() {
           <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-xl p-5 flex flex-col gap-3">
             <div className="flex items-center gap-3">
               <div className="bg-emerald-500 text-white rounded-full p-1 flex items-center justify-center">
-                <span className="material-symbols-outlined text-sm">check</span>
+                <Check className="w-4 h-4" />
               </div>
               <p className="text-emerald-900 dark:text-emerald-400 text-base font-bold leading-tight">1 lender match found!</p>
             </div>
@@ -153,7 +164,7 @@ export function EligibleLenders() {
                   className="text-primary hover:underline text-sm font-medium flex items-center gap-1"
                 >
                   View Details
-                  <span className="material-symbols-outlined text-xs">open_in_new</span>
+                  <ExternalLink className="w-3 h-3" />
                 </button>
               </div>
             </div>
@@ -219,13 +230,13 @@ export function EligibleLenders() {
                         className="w-16 h-16 object-contain"
                       />
                       <div className="absolute bottom-1 right-1 bg-green-500 h-6 w-6 rounded-full border-2 border-background-light dark:border-background-dark flex items-center justify-center">
-                        <span className="material-symbols-outlined text-white text-xs">verified</span>
+                        <BadgeCheck className="w-3 h-3 text-white" />
                       </div>
                     </div>
                     <div className="flex flex-col items-center justify-center text-center">
                       <h2 className="text-slate-900 dark:text-white text-2xl font-bold leading-tight tracking-tight">{lendersData[viewingLender].name}</h2>
                       <div className="flex items-center gap-1.5 mt-1">
-                        <span className="material-symbols-outlined text-primary text-sm">verified_user</span>
+                        <Badge className="w-4 h-4 text-primary" />
                         <p className="text-primary text-sm font-semibold uppercase tracking-wider">Verified Premier Partner</p>
                       </div>
                     </div>
@@ -252,21 +263,21 @@ export function EligibleLenders() {
                 <div className="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700 divide-y divide-slate-100 dark:divide-slate-700">
                   <div className="flex justify-between items-center py-3">
                     <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-slate-400 text-lg">percent</span>
+                      <Percent className="w-5 h-5 text-slate-400" />
                       <p className="text-slate-600 dark:text-slate-300 text-sm font-medium">Interest Rate</p>
                     </div>
                     <p className="text-slate-900 dark:text-white text-sm font-bold">{lendersData[viewingLender].interestRate}</p>
                   </div>
                   <div className="flex justify-between items-center py-3">
                     <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-slate-400 text-lg">receipt_long</span>
+                      <Receipt className="w-5 h-5 text-slate-400" />
                       <p className="text-slate-600 dark:text-slate-300 text-sm font-medium">Processing Fee</p>
                     </div>
                     <p className="text-slate-900 dark:text-white text-sm font-bold">{lendersData[viewingLender].processingFee}</p>
                   </div>
                   <div className="flex justify-between items-center py-3">
                     <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-slate-400 text-lg">schedule</span>
+                      <Clock className="w-5 h-5 text-slate-400" />
                       <p className="text-slate-600 dark:text-slate-300 text-sm font-medium">Approval Time</p>
                     </div>
                     <p className="text-green-600 dark:text-green-400 text-sm font-bold">{lendersData[viewingLender].approvalTime}</p>
@@ -310,7 +321,7 @@ export function EligibleLenders() {
             className="w-full bg-primary text-white py-4 rounded-xl font-bold text-base shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
           >
             View {eligibleLender.name} Details
-            <span className="material-symbols-outlined">arrow_forward</span>
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </footer>

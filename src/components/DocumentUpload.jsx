@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { ArrowLeft, ArrowRight, ChevronDown, MapPin, Info, AlertCircle } from 'lucide-react';
 import { documentUploadSchema } from '../lib/validations';
 
 export function DocumentUpload() {
@@ -10,7 +11,6 @@ export function DocumentUpload() {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
     watch
   } = useForm({
     resolver: zodResolver(documentUploadSchema),
@@ -50,7 +50,7 @@ export function DocumentUpload() {
             onClick={handleBack}
             className="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center hover:bg-slate-200/50 dark:hover:bg-slate-700/50 rounded-full transition-colors"
           >
-            <span className="material-symbols-outlined">arrow_back</span>
+            <ArrowLeft className="w-5 h-5" />
           </button>
           <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 ml-2">KYC - Basic Details</h2>
         </div>
@@ -85,7 +85,7 @@ export function DocumentUpload() {
           </div>
           {errors.businessName && (
             <p className="text-red-500 text-xs flex items-center gap-1 ml-1">
-              <span className="material-symbols-outlined text-sm">error</span>
+              <AlertCircle className="w-3 h-3" />
               {errors.businessName.message}
             </p>
           )}
@@ -108,7 +108,7 @@ export function DocumentUpload() {
           </div>
           {errors.ownerName && (
             <p className="text-red-500 text-xs flex items-center gap-1 ml-1">
-              <span className="material-symbols-outlined text-sm">error</span>
+              <AlertCircle className="w-3 h-3" />
               {errors.ownerName.message}
             </p>
           )}
@@ -134,12 +134,12 @@ export function DocumentUpload() {
               <option value="others">Others</option>
             </select>
             <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400">
-              <span className="material-symbols-outlined">keyboard_arrow_down</span>
+              <ChevronDown className="w-5 h-5" />
             </div>
           </div>
           {errors.storeCategory && (
             <p className="text-red-500 text-xs flex items-center gap-1 ml-1">
-              <span className="material-symbols-outlined text-sm">error</span>
+              <AlertCircle className="w-3 h-3" />
               {errors.storeCategory.message}
             </p>
           )}
@@ -187,12 +187,12 @@ export function DocumentUpload() {
               inputMode="numeric"
             />
             <div className="absolute inset-y-0 right-4 flex items-center text-slate-400">
-              <span className="material-symbols-outlined text-sm">location_on</span>
+              <MapPin className="w-4 h-4" />
             </div>
           </div>
           {errors.pincode && (
             <p className="text-red-500 text-xs flex items-center gap-1 ml-1">
-              <span className="material-symbols-outlined text-sm">error</span>
+              <AlertCircle className="w-3 h-3" />
               {errors.pincode.message}
             </p>
           )}
@@ -200,7 +200,7 @@ export function DocumentUpload() {
 
         {/* Info Card */}
         <div className="flex gap-3 p-4 rounded-lg bg-primary/5 dark:bg-primary/10 border border-primary/20">
-          <span className="material-symbols-outlined text-primary text-xl">info</span>
+          <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
           <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
             Make sure the business name matches your GST/Trade license records to avoid verification delays.
           </p>
@@ -215,7 +215,7 @@ export function DocumentUpload() {
             className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
           >
             <span>Continue to Step 2</span>
-            <span className="material-symbols-outlined">arrow_forward</span>
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </div>

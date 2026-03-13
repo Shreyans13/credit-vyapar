@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { ArrowLeft, CheckCircle2, CreditCard, Clock, ChevronRight } from 'lucide-react';
 
 export function ActivationSuccess() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export function ActivationSuccess() {
             onClick={handleBack}
             className="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
           >
-            <span className="material-symbols-outlined">arrow_back</span>
+            <ArrowLeft size={20} />
           </button>
           <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold flex-1 text-center pr-6">Success!</h2>
         </div>
@@ -28,7 +29,7 @@ export function ActivationSuccess() {
         <div className="flex-1 flex flex-col items-center p-8 text-center">
           {/* Success Icon */}
           <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6">
-            <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-6xl font-bold">check_circle</span>
+            <CheckCircle2 size={64} className="text-green-600 dark:text-green-400" />
           </div>
 
           {/* Main Content */}
@@ -42,20 +43,20 @@ export function ActivationSuccess() {
             <div className="bg-white p-6 rounded-2xl shadow-md">
               <div 
                 className="w-64 h-64 bg-center bg-no-repeat bg-cover"
-                style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrVIWTaz6sCEuuSCEQrprJEyMaZ0NdmL_LEBJilE2FY5zc4d0lU0U0byMsMU0XvN_B065l2LqtIpDB-V_0baVFkUcQbx41cyjiYR6IWdOL7sjXphwroSdk-dP5oeOTY7jlvQX74a_5N9Yd4nXmNMLuPTtUS39sgKtHCkYC7VA7LvUBJRC7GFytDLXtimQ7x50e0F6wQziVnTnn7WPrhuo6ozSdHHUiiQwVGFKgUv5sqEsQt4dYRYb20O8tIib07IroBdIFx_7n3LL3")'}}
+                style={{backgroundImage: "url('src/public/grahak.png')"}}
               ></div>
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-sm mt-6 font-medium">Scan this QR code to access your merchant dashboard</p>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mt-6 font-medium">Scan this QR code to access your customer screen</p>
           </div>
 
           {/* Features Summary */}
           <div className="grid grid-cols-2 gap-4 w-full mb-4">
             <div className="flex items-center gap-2 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <span className="material-symbols-outlined text-primary text-sm">payments</span>
+              <CreditCard size={14} className="text-primary" />
               <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Instant EMI</span>
             </div>
             <div className="flex items-center gap-2 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <span className="material-symbols-outlined text-primary text-sm">schedule</span>
+              <Clock size={14} className="text-primary" />
               <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">BNPL Ready</span>
             </div>
           </div>
@@ -68,7 +69,7 @@ export function ActivationSuccess() {
             className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2"
           >
             Go to Dashboard
-            <span className="material-symbols-outlined">chevron_right</span>
+            <ChevronRight size={18} />
           </button>
           <p className="text-center text-slate-400 text-xs mt-4">
             Need help?{' '}

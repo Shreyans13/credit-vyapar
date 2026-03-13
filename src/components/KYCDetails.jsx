@@ -2,6 +2,15 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRef } from 'react';
+import { 
+  ArrowLeft, 
+  Check, 
+  Camera, 
+  Images, 
+  FileUp, 
+  AlertCircle, 
+  Info 
+} from 'lucide-react';
 import { kycDocumentSchema } from '../lib/validations';
 
 export function KYCDetails() {
@@ -49,10 +58,6 @@ export function KYCDetails() {
     navigate('/signup-login');
   };
 
-  const handleHomeClick = () => {
-    navigate('/');
-  };
-
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
       {/* Header */}
@@ -62,7 +67,7 @@ export function KYCDetails() {
             onClick={handleBack}
             className="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer"
           >
-            <span className="material-symbols-outlined">arrow_back</span>
+            <ArrowLeft className="w-5 h-5" />
           </button>
           <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Business Verification</h2>
         </div>
@@ -100,7 +105,7 @@ export function KYCDetails() {
                 {panFile ? (
                   <>
                     <div className="size-14 rounded-full bg-green-500 text-white flex items-center justify-center">
-                      <span className="material-symbols-outlined text-3xl">check</span>
+                      <Check className="w-7 h-7" />
                     </div>
                     <div className="text-center">
                       <p className="text-sm font-semibold text-green-700 dark:text-green-400">{panFile.name}</p>
@@ -111,10 +116,10 @@ export function KYCDetails() {
                   <>
                     <div className="flex gap-4">
                       <div className="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                        <span className="material-symbols-outlined text-3xl">photo_camera</span>
+                        <Camera className="w-7 h-7" />
                       </div>
                       <div className="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                        <span className="material-symbols-outlined text-3xl">gallery_thumbnail</span>
+                        <Images className="w-7 h-7" />
                       </div>
                     </div>
                     <div className="text-center">
@@ -127,7 +132,7 @@ export function KYCDetails() {
             </div>
             {errors.panFile && (
               <p className="text-red-500 text-xs flex items-center gap-1">
-                <span className="material-symbols-outlined text-sm">error</span>
+                <AlertCircle className="w-3 h-3" />
                 {errors.panFile.message}
               </p>
             )}
@@ -157,7 +162,7 @@ export function KYCDetails() {
                 {gstFile ? (
                   <>
                     <div className="size-14 rounded-full bg-green-500 text-white flex items-center justify-center">
-                      <span className="material-symbols-outlined text-3xl">check</span>
+                      <Check className="w-7 h-7" />
                     </div>
                     <div className="text-center">
                       <p className="text-sm font-semibold text-green-700 dark:text-green-400">{gstFile.name}</p>
@@ -168,7 +173,7 @@ export function KYCDetails() {
                   <>
                     <div className="flex gap-4">
                       <div className="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                        <span className="material-symbols-outlined text-3xl">upload_file</span>
+                        <FileUp className="w-7 h-7" />
                       </div>
                     </div>
                     <div className="text-center">
@@ -181,7 +186,7 @@ export function KYCDetails() {
             </div>
             {errors.gstFile && (
               <p className="text-red-500 text-xs flex items-center gap-1">
-                <span className="material-symbols-outlined text-sm">error</span>
+                <AlertCircle className="w-3 h-3" />
                 {errors.gstFile.message}
               </p>
             )}
@@ -191,7 +196,7 @@ export function KYCDetails() {
 
         {/* Terms */}
         <div className="mt-8 flex gap-3 items-start p-4 rounded-xl bg-primary/5 border border-primary/10">
-          <span className="material-symbols-outlined text-primary text-xl">info</span>
+          <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
           <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
             By uploading these documents, you authorize us to verify the details with the respective government authorities. Your data is encrypted and secure.
           </p>

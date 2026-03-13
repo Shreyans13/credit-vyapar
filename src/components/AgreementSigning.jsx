@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRef, useState, useEffect } from 'react';
 import { agreementSchema } from '../lib/validations';
+import { ArrowLeft, FileText, Check, AlertCircle, RotateCcw, PenLine, Pen } from 'lucide-react';
 
 export function AgreementSigning() {
   const navigate = useNavigate();
@@ -113,7 +114,7 @@ export function AgreementSigning() {
             onClick={handleBack}
             className="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
           >
-            <span className="material-symbols-outlined">arrow_back</span>
+            <ArrowLeft size={20} />
           </button>
           <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 ml-2">Agreement Signing</h2>
         </div>
@@ -128,7 +129,7 @@ export function AgreementSigning() {
         <div className="px-4 pb-4">
           <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
             <div className="p-4 border-b border-slate-200 dark:border-slate-700 bg-slate-100/50 dark:bg-slate-800 flex items-center gap-2">
-              <span className="material-symbols-outlined text-primary text-sm">description</span>
+              <FileText size={14} className="text-primary" />
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Legal Document v2.4</span>
             </div>
             <div className="h-64 overflow-y-scroll p-4 text-sm text-slate-700 dark:text-slate-300 space-y-4 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600">
@@ -154,13 +155,13 @@ export function AgreementSigning() {
                 {...register('agreed')}
                 className="peer h-6 w-6 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent transition-all checked:bg-primary" 
               />
-              <span className="material-symbols-outlined absolute text-white scale-0 peer-checked:scale-100 transition-transform pointer-events-none text-sm font-bold">check</span>
+              <Check size={14} className="absolute text-white scale-0 peer-checked:scale-100 transition-transform pointer-events-none" />
             </div>
             <p className="text-slate-900 dark:text-slate-100 text-sm font-medium">I Agree to the Terms & Conditions</p>
           </label>
           {errors.agreed && (
             <p className="text-red-500 text-xs flex items-center gap-1 ml-9 mt-1">
-              <span className="material-symbols-outlined text-sm">error</span>
+              <AlertCircle size={14} />
               {errors.agreed.message}
             </p>
           )}
@@ -174,7 +175,7 @@ export function AgreementSigning() {
               onClick={clearSignature}
               className="flex items-center gap-1 text-primary text-xs font-bold hover:underline"
             >
-              <span className="material-symbols-outlined text-sm">refresh</span>
+              <RotateCcw size={14} />
               CLEAR
             </button>
           </div>
@@ -197,7 +198,7 @@ export function AgreementSigning() {
             />
             {!hasSignature && (
               <div className="flex flex-col items-center justify-center gap-2 pointer-events-none">
-                <span className="material-symbols-outlined text-slate-400 dark:text-slate-600 text-4xl">gesture</span>
+                <PenLine size={40} className="text-slate-400 dark:text-slate-600" />
                 <p className="text-slate-400 dark:text-slate-600 text-xs">Sign with your finger here</p>
               </div>
             )}
@@ -207,7 +208,7 @@ export function AgreementSigning() {
           </div>
           {errors.hasSignature && (
             <p className="text-red-500 text-xs flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm">error</span>
+              <AlertCircle size={14} />
               {errors.hasSignature.message}
             </p>
           )}
@@ -222,7 +223,7 @@ export function AgreementSigning() {
                 : 'bg-slate-400 text-white cursor-not-allowed'
             }`}
           >
-            <span className="material-symbols-outlined">draw</span>
+            <Pen size={18} />
             e-Sign & Activate
           </button>
           <p className="text-center text-[10px] text-slate-500 dark:text-slate-400 mt-4 leading-normal">

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { ArrowLeft, Store, ArrowRight, AlertCircle } from 'lucide-react';
 import { phoneSchema } from '../lib/validations';
 
 export function SignupLogin() {
@@ -40,7 +41,7 @@ export function SignupLogin() {
           onClick={() => navigate('/')}
           className="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
         >
-          <span className="material-symbols-outlined">arrow_back</span>
+          <ArrowLeft className="w-5 h-5" />
         </button>
         <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Merchant Access</h2>
       </div>
@@ -48,7 +49,7 @@ export function SignupLogin() {
       {/* Hero Branding Section */}
       <div className="flex flex-col items-center px-6 pt-12 pb-8">
         <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-          <span className="material-symbols-outlined text-primary text-5xl">storefront</span>
+          <Store className="w-10 h-10 text-primary" />
         </div>
         <h1 className="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-extrabold leading-tight text-center">Grow your business</h1>
         <p className="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal mt-2 text-center">Enter your mobile number to receive a secure login OTP</p>
@@ -86,7 +87,7 @@ export function SignupLogin() {
             </div>
             {errors.phoneNumber && (
               <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
-                <span className="material-symbols-outlined text-sm">error</span>
+                <AlertCircle className="w-3 h-3" />
                 {errors.phoneNumber.message}
               </p>
             )}
@@ -100,21 +101,7 @@ export function SignupLogin() {
           className="w-full bg-primary hover:bg-primary/90 disabled:bg-slate-400 text-white font-bold text-lg h-14 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
         >
           Send OTP
-          <span className="material-symbols-outlined">arrow_forward</span>
-        </button>
-
-        {/* Secondary Options */}
-        <div className="relative flex py-4 items-center">
-          <div className="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
-          <span className="flex-shrink mx-4 text-slate-400 text-sm">New to us?</span>
-          <div className="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
-        </div>
-        <button 
-          type="button"
-          onClick={handleRegister}
-          className="w-full border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary font-semibold text-base h-12 rounded-lg transition-all"
-        >
-          Register as a New Merchant
+          <ArrowRight className="w-5 h-5" />
         </button>
       </form>
 
