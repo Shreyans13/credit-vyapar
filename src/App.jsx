@@ -7,6 +7,7 @@ import { EligibleLenders } from './components/EligibleLenders';
 import { LenderProfile } from './components/LenderProfile';
 import { AgreementSigning } from './components/AgreementSigning';
 import { ActivationSuccess } from './components/ActivationSuccess';
+import { OTPVerification } from './components/OTPVerification';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup-login" element={<SignupLogin />} />
+        <Route path="/otp-verification" element={<OTPVerification />} />
         <Route path="/kyc-details" element={<KYCDetails />} />
         <Route path="/document-upload" element={<DocumentUpload />} />
         <Route path="/eligible-lenders" element={<EligibleLenders />} />

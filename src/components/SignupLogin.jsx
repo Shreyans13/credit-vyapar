@@ -22,15 +22,15 @@ export function SignupLogin() {
 
   const phoneNumber = watch('phoneNumber');
 
-  const onSubmit = () => {
-    navigate('/kyc-details');
+  const onSubmit = (data) => {
+    navigate('/otp-verification', { state: { phoneNumber: data.phoneNumber } });
   };
 
   const handleRegister = () => {
     if (!isValid) {
       return;
     }
-    navigate('/kyc-details');
+    navigate('/otp-verification', { state: { phoneNumber } });
   };
 
   return (

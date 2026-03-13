@@ -1,5 +1,11 @@
 import { z } from 'zod';
 
+export const otpSchema = z.object({
+  otp: z.string()
+    .length(6, 'OTP must be 6 digits')
+    .regex(/^[0-9]+$/, 'OTP must contain only digits')
+});
+
 export const phoneSchema = z.object({
   phoneNumber: z.string()
     .min(10, 'Phone number must be 10 digits')

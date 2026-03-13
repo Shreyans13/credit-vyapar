@@ -43,7 +43,7 @@ export function ActivationSuccess() {
             <div className="bg-white p-6 rounded-2xl shadow-md">
               <div 
                 className="w-64 h-64 bg-center bg-no-repeat bg-cover"
-                style={{backgroundImage: "url('src/public/grahak.png')"}}
+                style={{backgroundImage: "url('/grahak.png')"}}
               ></div>
             </div>
             <p className="text-slate-500 dark:text-slate-400 text-sm mt-6 font-medium">Scan this QR code to access your customer screen</p>
