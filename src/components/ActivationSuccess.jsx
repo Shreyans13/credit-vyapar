@@ -73,7 +73,7 @@ export function ActivationSuccess() {
           <p className="text-center text-slate-400 text-xs mt-4">
             Need help?{' '}
             <button 
-              onClick={() => alert('Contact Support: support@fintechpay.com')}
+              onClick={() => alert('Contact Support: support@creditvyapar.com')}
               className="text-primary font-semibold hover:underline"
             >
               Contact Support

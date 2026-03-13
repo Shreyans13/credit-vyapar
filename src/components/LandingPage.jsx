@@ -21,7 +21,7 @@ export function LandingPage() {
           <div className="bg-primary p-1.5 rounded-lg text-white">
             <span className="material-symbols-outlined block">account_balance_wallet</span>
           </div>
-          <h2 className="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">FintechPay</h2>
+          <h2 className="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">CreditVyapar</h2>
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
@@ -244,7 +244,7 @@ export function LandingPage() {
               <div className="bg-primary p-1 rounded text-white">
                 <span className="material-symbols-outlined text-sm block">account_balance_wallet</span>
               </div>
-              <h2 className="text-slate-900 dark:text-white text-lg font-bold">FintechPay</h2>
+              <h2 className="text-slate-900 dark:text-white text-lg font-bold">CreditVyapar</h2>
             </div>
             <div className="flex flex-wrap justify-center gap-6">
               <button 
@@ -260,7 +260,7 @@ export function LandingPage() {
                 Terms of Service
               </button>
               <button 
-                onClick={() => alert('Contact Us - support@fintechpay.com')}
+                onClick={() => alert('Contact Us - support@creditvyapar.com')}
                 className="text-slate-500 hover:text-primary transition-colors text-sm font-medium"
               >
                 Contact Us
@@ -274,7 +274,7 @@ export function LandingPage() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-100 dark:border-slate-800 gap-4">
-            <p className="text-slate-400 text-sm">© 2024 B2B Fintech Platform. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2024 CreditVyapar. All rights reserved.</p>
             <div className="flex gap-4">
               <button 
                 onClick={() => alert('Website - Coming Soon')}

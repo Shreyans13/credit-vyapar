@@ -138,7 +138,7 @@ export function KYCDetails() {
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
               <h3 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">GST Certificate</h3>
-              <span className="text-xs font-medium px-2 py-1 rounded bg-primary/10 text-primary dark:bg-primary/20">Optional</span>
+              <span className="text-xs font-medium px-2 py-1 rounded bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">Required</span>
             </div>
             <input 
               type="file" 
