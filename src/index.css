@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --primary: #0052cc;
+    --background-light: #f5f7f8;
+    --background-dark: #0f1723;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +23,47 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   min-height: 100dvh;
+  background-color: var(--background-light);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.bg-background-light {
+  background-color: var(--background-light);
+}
+
+.bg-background-dark {
+  background-color: var(--background-dark);
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--primary);
+}
+
+.focus\:border-primary:focus {
+  border-color: var(--primary);
+}
+
+.hover\:text-primary:hover {
+  color: var(--primary);
+}
+
+.hover\:border-primary:hover {
+  border-color: var(--primary);
+}
+
+.accent-primary {
+  accent-color: var(--primary);
 }
 
 .material-symbols-outlined {
@@ -48,4 +97,27 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Range slider styling */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
