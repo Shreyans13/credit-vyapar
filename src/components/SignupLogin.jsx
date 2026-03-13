@@ -118,39 +118,6 @@ export function SignupLogin() {
         </button>
       </form>
 
-      {/* Footer / Bottom Navigation */}
-      <div className="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
-        <div className="flex gap-2 px-4 pb-8 pt-4">
-          <button 
-            onClick={() => alert('Help Center - Coming Soon')}
-            className="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-          >
-            <div className="flex h-8 items-center justify-center">
-              <span className="material-symbols-outlined">help_center</span>
-            </div>
-            <p className="text-[10px] uppercase font-bold tracking-wider">Help</p>
-          </button>
-          <button 
-            onClick={() => alert('Language selection - Coming Soon')}
-            className="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-          >
-            <div className="flex h-8 items-center justify-center">
-              <span className="material-symbols-outlined">translate</span>
-            </div>
-            <p className="text-[10px] uppercase font-bold tracking-wider">Language</p>
-          </button>
-          <button 
-            onClick={() => alert('Hindi language - Coming Soon')}
-            className="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-          >
-            <div className="flex h-8 items-center justify-center">
-              <span className="material-symbols-outlined">g_translate</span>
-            </div>
-            <p className="text-[10px] uppercase font-bold tracking-wider">Hindi</p>
-          </button>
-        </div>
-      </div>
-
       {/* Background Accent Decorative */}
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>

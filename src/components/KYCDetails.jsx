@@ -207,37 +207,6 @@ export function KYCDetails() {
           </button>
         </div>
       </form>
-
-      {/* Bottom Navigation Bar */}
-      <nav className="fixed bottom-0 left-0 right-0 z-20 bg-background-light dark:bg-background-dark border-t border-primary/10 px-4 pb-3 pt-2">
-        <div className="flex gap-2 max-w-md mx-auto">
-          <button 
-            onClick={handleHomeClick}
-            className="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-          >
-            <span className="material-symbols-outlined">home</span>
-            <p className="text-[10px] font-medium leading-normal tracking-[0.015em]">Home</p>
-          </button>
-          <button className="flex flex-1 flex-col items-center justify-end gap-1 text-primary">
-            <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>description</span>
-            <p className="text-[10px] font-medium leading-normal tracking-[0.015em]">Documents</p>
-          </button>
-          <button 
-            onClick={() => alert('History - Coming Soon')}
-            className="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-          >
-            <span className="material-symbols-outlined">history</span>
-            <p className="text-[10px] font-medium leading-normal tracking-[0.015em]">History</p>
-          </button>
-          <button 
-            onClick={() => alert('Profile - Coming Soon')}
-            className="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-          >
-            <span className="material-symbols-outlined">person</span>
-            <p className="text-[10px] font-medium leading-normal tracking-[0.015em]">Profile</p>
-          </button>
-        </div>
-      </nav>
     </div>
   );
 }
