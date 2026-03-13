@@ -1,234 +1,140 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { 
-  Wallet, 
-  Menu, 
-  X, 
-  CheckCircle, 
-  ShieldCheck, 
-  Zap, 
-  Network,
-  Globe,
-  Share2
-} from 'lucide-react';
 
 export function LandingPage() {
   const navigate = useNavigate();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setMobileMenuOpen(false);
-  };
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background-light dark:bg-background-dark">
-      {/* Top Navigation */}
-      <nav className="flex items-center bg-background-light dark:bg-background-dark px-4 py-3 lg:px-8 justify-between sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-          <div className="bg-primary p-2 rounded-lg text-white">
-            <Wallet className="w-5 h-5" />
+    <div className="bg-gray-50 text-gray-900 min-h-screen">
+      <nav className="bg-white shadow-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <div className="flex-shrink-0 flex items-center gap-3">
+              <div className="w-10 h-10 bg-blue-800 text-white rounded font-bold flex items-center justify-center text-xl">N</div>
+              <span className="font-bold text-gray-800 hidden sm:block">A Whitelabel Solution from NILKAMAL</span>
+            </div>
+            <div className="flex items-center">
+              <span className="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">Powered by Nilkamal Plastics</span>
+            </div>
           </div>
-          <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold tracking-tight">CreditVyapar</h2>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <main className="flex-1">
-        <div className="flex flex-col gap-8 px-4 py-8 md:py-16 lg:flex-row lg:items-center max-w-7xl mx-auto">
-          {/* Hero Content */}
-          <div className="flex flex-col gap-5 order-1 lg:w-1/2 lg:pr-8">
-            <div className="flex flex-col gap-3 text-left">
-              <h1 className="text-slate-900 dark:text-white text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight">
-                Empower Your Shop with Instant Customer EMI
-              </h1>
-              <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg font-normal leading-relaxed">
-                Unlock growth with seamless credit solutions for your customers.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button 
-                onClick={() => navigate('/signup-login')}
-                className="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-11 px-6 bg-primary text-white text-base font-bold transition-transform active:scale-95 hover:bg-primary/90"
-              >
-                Get Started
-              </button>
-            </div>
-            <div className="flex items-center gap-3 py-2">
-              <div className="flex -space-x-2">
-                <div className="h-8 w-8 rounded-full border-2 border-white bg-slate-300"></div>
-                <div className="h-8 w-8 rounded-full border-2 border-white bg-slate-400"></div>
-                <div className="h-8 w-8 rounded-full border-2 border-white bg-slate-500"></div>
+      <main className="relative bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-10 sm:pt-16">
+            <div className="px-4 sm:px-6 lg:px-8">
+              <div className="sm:text-center lg:text-left">
+                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl leading-tight">
+                  Increase your <br />
+                  <span className="text-blue-800">Furniture Sales</span> <br />
+                  Instantly
+                </h1>
+                <p className="mt-3 text-blue-800 text-lg sm:mt-5 sm:text-xl sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 font-semibold">
+                  Sell More Furniture, Faster.
+                </p>
+                <p className="mt-1 text-sm text-gray-500 sm:max-w-xl sm:mx-auto lg:mx-0">
+                 Empower your customers to buy bigger. Give them access to instant, brand-approved EMIs while you get settled upfront, zero risk attached.
+                </p>
+                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                  <div className="rounded-md shadow">
+                    <button 
+                      onClick={() => navigate('/signup-login')}
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 md:py-4 md:text-lg transition-colors"
+                    >
+                      GROW MY SALES
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="mt-6 flex items-center sm:justify-center lg:justify-start gap-3">
+                  <div className="flex -space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
+                    <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                    <div className="w-8 h-8 rounded-full bg-blue-200 border-2 border-white"></div>
+                  </div>
+                  <p className="text-sm text-gray-600 font-medium">Joined by 5000+ local furniture partners.</p>
+                </div>
               </div>
-              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Joined by 5000+ local merchants</p>
             </div>
           </div>
-          
-          {/* Hero Image */}
-          <div className="order-2 lg:w-1/2 mt-6 lg:mt-0">
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-slate-200 dark:bg-slate-800">
-              <img 
-                alt="Happy Indian shopkeeper in their store" 
-                className="w-full h-full object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8sEdbuz63o_6EGJ30jNG1C8-o01mPbF7bbJk_rNephzEDK6hkM0HvXPFo64p6vkmqojAHFqYL6738akCLPRAijXSczNL7wWOY_1nU-Iv4Ko-oRgQbZbGfsZ9Cmec8ig0rPvF3rG_WQUcfItXYPhVz_ln9q_CED0orm7x23BNwUrN-BwpxGDub3EG_-QKsXeLffzD5Zk-PcanXHyr7eZXJbm2ABls8UERZkCc2MRqK751K6RP-EglhZVdksudvfaaUVtX94JumkdPC"
-              />
-              {/* Floating Badge */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3 rounded-xl flex items-center gap-3 border border-slate-200 dark:border-slate-700">
-                <div className="bg-green-500 h-9 w-9 rounded-full flex items-center justify-center text-white shrink-0">
-                  <CheckCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Instant Approval</p>
-                  <p className="text-sm font-bold text-slate-900 dark:text-white">Loan disbursed in 3 minutes</p>
-                </div>
+        </div>
+        
+        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 mt-8 lg:mt-0 px-4 sm:px-6 lg:px-0">
+          <div className="relative h-64 sm:h-72 md:h-96 lg:h-full rounded-2xl lg:rounded-none overflow-hidden shadow-lg lg:shadow-none">
+            <img className="w-full h-full object-cover" src="/store.png" alt="Furniture Store Owner" />
+            
+            <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-8 sm:bottom-8 bg-white/95 backdrop-blur rounded-lg p-4 shadow-xl border border-gray-100 flex items-center gap-4">
+              <div className="bg-green-100 p-2 rounded-full text-green-600">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">NILKAMAL CUSTOMER EMI</p>
+                <p className="text-sm font-bold text-gray-900">Instant approval. Sale closed.</p>
               </div>
             </div>
           </div>
         </div>
       </main>
 
-      {/* Value Propositions */}
-      <section id="features" className="py-12 sm:py-16 bg-white dark:bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col gap-3 mb-10 text-center items-center">
-            <h2 className="text-slate-900 dark:text-white text-2xl sm:text-3xl font-bold tracking-tight">
-              Built for Modern Retail
+      <div className="bg-gray-50 py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+              Built for Modern Furniture Retail
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
-              Experience the best B2B fintech solutions designed to help retail businesses scale with confidence.
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">NILKAMAL TRUSTED FINANCING</h3>
+              <p className="text-sm text-gray-600">India's trust in your store. Secure and brand-backed financing adds prestige to your business.</p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">FASTER HIGH-VALUE SALES</h3>
+              <p className="text-sm text-gray-600">Close big deals faster. Instant paperless KYC means instant sales for large furniture sets.</p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">MAXIMUM APPROVAL NETWORK</h3>
+              <p className="text-sm text-gray-600">Access India's best banks and NBFCs directly. High approval rates for every type of customer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-blue-800">
+        <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between text-center lg:text-left">
+          <div>
+            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+              <span className="block">Ready to grow your revenue?</span>
+            </h2>
+            <p className="mt-3 text-lg leading-6 text-blue-200">
+              Join thousands of Nilkamal merchants already boosting their monthly sales.
             </p>
           </div>
-          <div id="lenders" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {/* Trust Card */}
-            <div className="flex flex-col gap-4 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-slate-800/50 hover:border-primary transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-tight">Trust</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                  Secure transactions you and your customers can rely on. Fully compliant with RBI guidelines.
-                </p>
-              </div>
-            </div>
-            {/* Speed Card */}
-            <div className="flex flex-col gap-4 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-slate-800/50 hover:border-primary transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                <Zap className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-tight">Speed</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                  Paperless digital KYC and instant approval process to close sales faster than ever before.
-                </p>
-              </div>
-            </div>
-            {/* Multiple Lenders Card */}
-            <div className="flex flex-col gap-4 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-slate-800/50 hover:border-primary transition-colors sm:col-span-2 lg:col-span-1">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                <Network className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-tight">Multiple Lenders</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                  Access to a wide network of leading banks and NBFCs to ensure higher approval rates.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="cta" className="px-4 py-12 sm:py-16">
-        <div className="max-w-4xl mx-auto rounded-3xl bg-primary p-6 sm:p-10 lg:p-12 text-center text-white relative overflow-hidden">
-          {/* Abstract Pattern background */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-              <path d="M0 0 L100 0 L100 100 L0 100 Z" fill="currentColor"></path>
-              <circle cx="20" cy="20" fill="white" r="30"></circle>
-              <circle cx="80" cy="80" fill="white" r="40"></circle>
-            </svg>
-          </div>
-          <div className="relative z-10 flex flex-col items-center gap-5">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black max-w-2xl leading-tight">
-              Ready to grow your business revenue?
-            </h2>
-            <p className="text-base sm:text-lg opacity-90 max-w-lg">
-              Join thousands of merchants already using our platform to boost their monthly sales.
-            </p>
-            <button 
-              onClick={() => navigate('/signup-login')}
-              className="bg-white text-primary px-8 py-3 rounded-xl text-base font-black transition-transform hover:scale-105 active:scale-95 shadow-xl"
-            >
-              Register Your Shop Now
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 py-8 sm:py-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div 
-              className="flex items-center gap-2 cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              <div className="bg-primary p-1.5 rounded-lg text-white">
-                <Wallet className="w-5 h-5" />
-              </div>
-              <h2 className="text-slate-900 dark:text-white text-base font-bold">CreditVyapar</h2>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+          <div className="mt-8 flex justify-center lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
               <button 
-                onClick={() => alert('Privacy Policy - Coming Soon')}
-                className="text-slate-500 hover:text-primary transition-colors text-sm font-medium"
+                onClick={() => navigate('/signup-login')}
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-800 bg-white hover:bg-gray-50"
               >
-                Privacy Policy
-              </button>
-              <button 
-                onClick={() => alert('Terms of Service - Coming Soon')}
-                className="text-slate-500 hover:text-primary transition-colors text-sm font-medium"
-              >
-                Terms of Service
-              </button>
-              <button 
-                onClick={() => alert('Contact Us - support@creditvyapar.com')}
-                className="text-slate-500 hover:text-primary transition-colors text-sm font-medium"
-              >
-                Contact Us
-              </button>
-              <button 
-                onClick={() => scrollToSection('lenders')}
-                className="text-slate-500 hover:text-primary transition-colors text-sm font-medium"
-              >
-                Lending Partners
-              </button>
-            </div>
-          </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 gap-4">
-            <p className="text-slate-400 text-xs sm:text-sm">© 2026 CreditVyapar. All rights reserved.</p>
-            <div className="flex gap-3">
-              <button 
-                onClick={() => alert('Website - Coming Soon')}
-                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors"
-              >
-                <Globe className="w-4 h-4" />
-              </button>
-              <button 
-                onClick={() => alert('Share - Coming Soon')}
-                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors"
-              >
-                <Share2 className="w-4 h-4" />
+                Get Started Today
               </button>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
