@@ -28,17 +28,17 @@ export function EligibleLenders() {
     resolver: zodResolver(lenderSelectionSchema),
     mode: 'onChange',
     defaultValues: {
-      selectedLenders: ['hdfc']
+      selectedLenders: ['dmi']
     }
   });
 
   const selectedLenders = watch('selectedLenders');
 
-  // Only HDFC is eligible/pre-approved
+  // Only DMI is eligible/pre-approved
   const lendersData = {
-    hdfc: {
-      id: 'hdfc',
-      name: 'HDFC Bank',
+    dmi: {
+      id: 'dmi',
+      name: 'DMI Finance',
       status: 'Eligible',
       statusColor: 'emerald',
       mdr: '1.2%',
@@ -48,12 +48,12 @@ export function EligibleLenders() {
       settlement: 'T+1',
       downpayment: '0% Required',
       emiOptions: '3/6/9/12 Months',
-      logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC3trtrmR844V8MzkNQ5sphHb__kTiMWwQ14JZCc9bOzboyspVSKciGx922jvmkQlbejzGWsl9tlvV1auaCFivLW8VHaD2SVCq1t1TQTzN1ShfHA9-OMdBXOCGviNBQWWcAsvh7Y0bgFzhmdSv0_adcMMBSfeb7_H2bx1VnTbvFx3M86bwnd2UpCKERHEi6PEqQndus_i--zVjJnN5JKS4BX0J84873TpaG6yiqSFgoLzU3t7OF43-xyf2VLbdNuDrWdyqk0x48QhDv',
+      logo: 'https://dmifinance.in/assets/images/logo.png',
       eligible: true
     },
-    bajaj: {
-      id: 'bajaj',
-      name: 'Bajaj Finserv',
+    fibe: {
+      id: 'fibe',
+      name: 'Fibe',
       status: 'Not Eligible',
       statusColor: 'slate',
       mdr: '1.5%',
@@ -63,13 +63,13 @@ export function EligibleLenders() {
       settlement: 'T+1',
       downpayment: '5% Required',
       emiOptions: '3/6/9 Months',
-      logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDxJ-JLKSBrs7CKZ9238ONk45tW9pqCeXtur_ADLf0AetUljwnsXCg-AlGFZu3yttqygV1Q3rVSG9ufNjqHp7JXqIKy_PKGyESZdEmWcaj1X1ZfvKqbadE0m7uUear6zOgJgYbzJFuCOjJIFFpSZRCH4miyuD8IvGAykJsXMuPf3njGYI6NiDhbKDa6BqxE-QJvjqufHLcK9Bwu1MhLoH7gPxaudc1NczKU8sCfysGLwBGNd6bRs2wzoxqXPZdZnM8l4a0_9pA3ryfO',
+      logo: 'https://www.fibe.in/wp-content/uploads/2023/06/fibe-logo.svg',
       eligible: false,
       reason: 'Business vintage requirement not met'
     },
-    icici: {
-      id: 'icici',
-      name: 'ICICI Bank',
+    tvscredit: {
+      id: 'tvscredit',
+      name: 'TVS Credit',
       status: 'Not Eligible',
       statusColor: 'slate',
       mdr: '1.4%',
@@ -79,7 +79,7 @@ export function EligibleLenders() {
       settlement: 'T+2',
       downpayment: '0% Required',
       emiOptions: '3/6/9/12/18 Months',
-      logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuALnxTRUkxnIV7S2sBx399XpcQbr0hPw5oSNSruuxcRX-_4uMP_I1b1_SY4nOUhw2WV0d2toPzYgQ87ns2UlJtCnASP9UYIdHeElA0hadl_BLyCgwfiVYwsTTsK4D2OB0VnguvkQ1eiuRCExAtDgMID2lRgI7uucLGxY2W8BuBPQv6hH-d9bKfVE1z9hXLWXKc_r-JKNkgTvsCLLl2x2ys2UkkDW9TjxkjGDD5JM5JRNshd4uMdMU3Yw8IEvHjK1T1wyecRFWr6zKhd',
+      logo: 'https://www.tvscredit.com/images/tvs-credit-logo.png',
       eligible: false,
       reason: 'Monthly turnover below minimum threshold'
     }
@@ -140,12 +140,8 @@ export function EligibleLenders() {
         <div className="px-4 py-2">
           <div className="bg-white dark:bg-slate-900 border-2 border-emerald-500 rounded-xl p-4 shadow-md">
             <div className="flex gap-4">
-              <div className="bg-slate-50 dark:bg-slate-800 rounded-lg size-16 flex items-center justify-center overflow-hidden border border-slate-100 dark:border-slate-700">
-                <img 
-                  className="w-full h-full object-cover" 
-                  alt={`${eligibleLender.name} Logo`}
-                  src={eligibleLender.logo}
-                />
+              <div className="bg-primary/10 rounded-lg size-16 flex items-center justify-center border border-primary/20">
+                <span className="text-primary text-2xl font-extrabold">{eligibleLender.name[0]}</span>
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-1">
@@ -180,12 +176,8 @@ export function EligibleLenders() {
             {Object.values(lendersData).filter(l => !l.eligible).map((lender) => (
               <div key={lender.id} className="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-4 opacity-75">
                 <div className="flex gap-4">
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg size-16 flex items-center justify-center overflow-hidden border border-slate-100 dark:border-slate-700 grayscale">
-                    <img 
-                      className="w-full h-full object-cover" 
-                      alt={`${lender.name} Logo`}
-                      src={lender.logo}
-                    />
+                  <div className="bg-slate-200 dark:bg-slate-700 rounded-lg size-16 flex items-center justify-center border border-slate-300 dark:border-slate-600">
+                    <span className="text-slate-400 dark:text-slate-500 text-2xl font-extrabold">{lender.name[0]}</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
@@ -224,11 +216,7 @@ export function EligibleLenders() {
                 <div className="flex w-full flex-col gap-6 items-center">
                   <div className="flex gap-4 flex-col items-center">
                     <div className="bg-primary/10 flex items-center justify-center rounded-full min-h-24 w-24 relative">
-                      <img 
-                        src={lendersData[viewingLender].logo}
-                        alt={lendersData[viewingLender].name}
-                        className="w-16 h-16 object-contain"
-                      />
+                      <span className="text-primary text-4xl font-extrabold">{lendersData[viewingLender].name[0]}</span>
                       <div className="absolute bottom-1 right-1 bg-green-500 h-6 w-6 rounded-full border-2 border-background-light dark:border-background-dark flex items-center justify-center">
                         <BadgeCheck className="w-3 h-3 text-white" />
                       </div>

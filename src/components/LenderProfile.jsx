@@ -20,7 +20,7 @@ export function LenderProfile() {
   const currentYRef = useRef(0);
 
   const eligibleLender = {
-    name: 'HDFC Bank',
+    name: 'DMI Finance',
     subtitle: 'Eligible',
     settlement: 'T+1',
     downpayment: '0%',
@@ -74,12 +74,8 @@ export function LenderProfile() {
         {/* Lender Hero */}
         <div className="flex flex-col items-center gap-3 pt-6 pb-4 px-6">
           <div className="relative">
-            <div className="w-24 h-24 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 shadow-md flex items-center justify-center overflow-hidden">
-              <img
-                src={eligibleLender.logo}
-                alt={eligibleLender.name}
-                className="w-16 h-16 object-contain"
-              />
+            <div className="w-24 h-24 rounded-full bg-primary/10 border-2 border-primary/20 shadow-md flex items-center justify-center">
+              <span className="text-primary text-4xl font-extrabold">{eligibleLender.name[0]}</span>
             </div>
             <div className="absolute bottom-0 right-0 bg-emerald-500 w-7 h-7 rounded-full border-2 border-slate-100 dark:border-slate-950 flex items-center justify-center">
               <CheckCircle2 size={14} className="text-white" />
